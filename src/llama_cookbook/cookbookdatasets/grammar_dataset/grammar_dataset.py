@@ -9,6 +9,7 @@ from datasets import load_dataset
 from pathlib import Path
 
 from torch.utils.data import Dataset
+from typing import Dict, Any
 
 
 class grammar(Dataset):
@@ -63,10 +64,10 @@ class grammar(Dataset):
         return self.convert_to_features(self.dataset["train"][int(index)])
 
 
-def get_dataset(
-    dataset_config, tokenizer, csv_name=None
-):
+def get_dataset(*args, **kwargs) -> Dict[str, Any]:
     """cover function for handling loading the working dataset"""
+    # Move imports inside function to avoid circular dependencies
+    dataset_config, tokenizer, csv_name = args
     """dataset loading"""
     if csv_name is None:
         currPath = Path.cwd() / "datasets_grammar" / "grammar_train.csv"

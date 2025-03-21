@@ -4,7 +4,7 @@
 import torch
 
 from llama_cookbook.data.concatenator import ConcatDataset
-from llama_cookbook.datasets import DATASET_PREPROC, DATALOADER_COLLATE_FUNC
+from llama_cookbook.cookbookdatasets import DATASET_PREPROC, DATALOADER_COLLATE_FUNC
 from llama_cookbook.utils.config_utils import get_dataloader_kwargs
 
 

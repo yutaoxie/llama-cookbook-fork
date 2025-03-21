@@ -17,7 +17,7 @@ from transformers.data import DataCollatorForSeq2Seq
 
 from llama_cookbook.configs import datasets, lora_config, llama_adapter_config, prefix_config, train_config
 from llama_cookbook.data.sampler import LengthBasedBatchSampler, DistributedLengthBasedBatchSampler
-from llama_cookbook.datasets import DATASET_PREPROC
+from llama_cookbook.cookbookdatasets import DATASET_PREPROC
 
 def update_config(config, **kwargs):
     if isinstance(config, (tuple, list)):
